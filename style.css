@@ -23,7 +23,7 @@ body {
     font-weight: 300;
     position: relative;
     height: 100vh;
-    color: #555;
+    color: rgb(255, 255, 255);
 }
 
 .wrapper {
@@ -32,8 +32,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    background-color: rgb(34, 200, 159);
+    box-shadow: 0px 10px 50px rgba(236, 236, 236, 0.3);
     overflow: hidden;
 }
 
@@ -66,37 +66,39 @@ body {
     text-align: center;
     font-size: 80px;
     font-weight: 100;
-    color: #EB4D4D;
+    color: rgb(255, 255, 255);
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7; }
+.active { background-color: #000000; }
 .active .player-name { font-weight: 300; }
 
 .active .player-name::after {
     content: "\2022";
     font-size: 47px;
     position: absolute;
-    color: #EB4D4D;
+    color: rgb(255, 0, 0);
     top: -7px;
     right: 10px;
     
 }
 
 .player-current-box {
-    background-color: #EB4D4D;
-    color: #fff;
+    background-color: rgb(100, 98, 98);
+    color: rgb(255, 255, 255);
     width: 40%;
     margin: 0 auto;
     padding: 12px;
     text-align: center;
+    border: 1px solid rgb(114, 114, 114);
+    border-radius: 15px;
 }
 
 .player-current-label {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-size: 12px;
-    color: #222;
+    color: rgb(233, 233, 233);
 }
 
 .player-current-score {
@@ -108,14 +110,14 @@ button {
     width: 200px;
     left: 50%;
     transform: translateX(-50%);
-    color: #555;
+    color: rgb(255, 255, 255);
     background: none;
     border: none;
     font-family: Lato;
     font-size: 20px;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: 300;
+    font-weight: 350;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -127,7 +129,7 @@ button:focus {
 }
 
 i {
-    color: #EB4D4D;
+    color: rgb(253, 253, 253);
     display: inline-block;
     margin-right: 15px;
     font-size: 32px;
@@ -150,5 +152,5 @@ i {
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
-.winner { background-color: #f7f7f7; }
+.winner { background-color: #00ff37; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
