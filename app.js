@@ -58,7 +58,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
         document.querySelector('.dice').style.display = 'none';
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-        document.querySelector('.player-' + activePlayer + '-panel').classList.remove.add('active');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove.remove('active');
         gamePlaying = false;
     } else {
         //next player
