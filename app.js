@@ -10,10 +10,9 @@ GAME RULES:
 */
 // 0-first player, 1-second
 
-let scores, roundScore, activePlayer;
+let scores, roundScore, activePlayer, gamePlaying;
 
 init();
-
 
 dice = Math.floor(Math.random() * 6) + 1;
 
@@ -23,10 +22,9 @@ dice = Math.floor(Math.random() * 6) + 1;
 //let x = document.querySelector('#score-0').textContent;
 //console.log(x);
 
-
-
 document.querySelector('.btn-roll').addEventListener('click', function() {
-    //1. random number
+    if(gamePlaying) {
+        //1. random number
     let dice = Math.floor(Math.random() * 6) + 1;
 
     //2. display
@@ -44,21 +42,28 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         //next player
         nextPlayer();
     }
-
+   
+    }
 
 });
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
-    // add current score to global score
+    if (gamePlaying) {
+        // add current score to global score
     scores[activePlayer] += roundScore;
     //update the UI
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     //check if player won the game
-    if (scores[activePlayer] >= 100 ) {
+    if (scores[activePlayer] >= 10) {
         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove.add('active');
+        gamePlaying = false;
     } else {
         //next player
     nextPlayer();
+    }
     }
 });
 
@@ -83,7 +88,7 @@ function nextPlayer() {
         scores = [0, 0];
         activePlayer = 0;
         roundScore = 0;
-
+        gamePlaying = true;
         document.querySelector('.dice').style.display = 'none';
 
         document.getElementById('score-0').textContent = '0';
@@ -97,9 +102,6 @@ function nextPlayer() {
         document.querySelector('.player-0-panel').classList.remove  = 'active';
         document.querySelector('.player-1-panel').classList.remove = 'active';
         document.querySelector('.player-0-panel').classList.add = 'active';
-
-
-
     }
 
 
